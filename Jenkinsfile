@@ -9,8 +9,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Use bat instead of sh for Windows
-                bat 'docker build -t username/flask-app:%BUILD_NUMBER% .\\app'
-                bat 'docker push username/flask-app:%BUILD_NUMBER%'
+                bat 'docker build -t nithin282004/flask-app:%BUILD_NUMBER% .\\app'
+                bat 'docker push nithin282004/flask-app:%BUILD_NUMBER%'
             }
         }
         stage('Deploy to Kubernetes') {
