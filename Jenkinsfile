@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps { 
-                git 'https://github.com/nithin282004/dev-pro.git' 
+                git branch: 'main', url: 'https://github.com/nithin282004/dev-pro.git'
             }
         }
         stage('Build Docker Image') {
@@ -23,3 +23,4 @@ pipeline {
         }
     }
 }
+
