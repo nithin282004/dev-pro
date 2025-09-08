@@ -18,9 +18,14 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps { 
-                bat 'kubectl apply -f deployment.yaml && kubectl apply -f service.yaml' 
+                bat 'kubectl delete -f deployment.yaml --ignore-not-found'
+                bat 'kubectl delete -f service.yaml --ignore-not-found'
+                bat 'kubectl apply -f deployment.yaml'
+                bat 'kubectl apply -f service.yaml'
+
             }
         }
     }
 }
+
 
