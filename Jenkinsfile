@@ -23,11 +23,13 @@ pipeline {
                 bat 'kubectl apply -f deployment.yaml'
                 bat 'kubectl apply -f service.yaml'
                 bat 'kubectl apply -f ingress.yaml'
+                bat 'kubectl service flask-service'
 
             }
         }
     }
 }
+
 
 
 
