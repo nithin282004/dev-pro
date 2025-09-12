@@ -22,10 +22,12 @@ pipeline {
                 bat 'kubectl delete -f service.yaml --ignore-not-found'
                 bat 'kubectl apply -f deployment.yaml'
                 bat 'kubectl apply -f service.yaml'
+                bat 'kubectl apply -f ingress.yaml'
 
             }
         }
     }
 }
+
 
 
